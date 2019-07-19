@@ -157,7 +157,7 @@ int main(int argc, char* argv[]) {
 
             // Saving TCP data
             packet_saved.tcp_data_size = 0;
-            packet_saved.tcp_data = (uint8_t *)malloc(sizeof(uint8_t) * packet_saved.tcp_data_size);
+            packet_saved.tcp_data = (uint8_t *)malloc(sizeof(uint8_t) * 10);
             if(i==ETHERNET_HEADER_SIZE + packet_saved.ip_header_size + packet_saved.tcp_header_size - 2) {
                 for(int j=0; packet[j] == 0x00 && packet[j+1] == 0x00; j++) {
                     packet_saved.tcp_data_size++;
